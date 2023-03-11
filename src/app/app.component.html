@@ -1,3 +1,9 @@
 <div class="button">
-<button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;">button</button>
+  <button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;" (click)="addComponent()">Создать компонент</button>
+  <br>
+  <br>
+  <button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;" (click)="deleteComponent()">Удалить компонент</button>
 </div>
+<br>
+
+<ng-template #dynamicComp></ng-template>
