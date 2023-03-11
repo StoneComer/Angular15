@@ -1,6 +1,7 @@
 <div class="button">
 <button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;" (click)="getUsers()">subscribe</button>
 </div>
-<div>
-  {{users | json}}
-</div>
+<br>
+<ng-container *ngFor="let user of users">
+  <p>{{user | json}}</p>
+</ng-container>
