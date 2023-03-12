@@ -3,17 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommentsComponent } from './comments/comments.component';
+import { CommentsListComponent } from './comments-list/comments-list.component';
+import { ErrorComponent } from './error/error.component';
+import { DataService } from './data.service';
+import { AccessRoleGuard } from './access-role.guard';
+import { Comments2Component } from './comments2/comments2.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommentsComponent,
+    CommentsListComponent,
+    ErrorComponent,
+    Comments2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ButtonsModule.forRoot()
   ],
-  providers: [],
+  providers: [DataService, AccessRoleGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
