@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-comments2',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./comments2.component.css']
 })
 export class Comments2Component {
+  constructor(public dataService:DataService){}
   comment2 = {
     "userId": 1,
     "id": 2,

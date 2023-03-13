@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'comments',
     component: CommentsListComponent,
-    canActivateChild: [AccessRoleGuard],
+    //canActivateChild: [AccessRoleGuard],
       children: [
         {
           path: '1',
