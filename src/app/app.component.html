@@ -1,3 +1,15 @@
+<form class="coontainer ma-auto">
+<input [(ngModel)]="text"  type="text" class="form-control">
+</form>
+<br>
 <div class="button">
 <button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;">button</button>
 </div>
+<br>
+<p>TODO List</p>
+<br>
+<ng-container>
+    <div *ngFor="let i of todocurrent">
+        {{i|json}}
+    </div>
+</ng-container>
