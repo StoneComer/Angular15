@@ -9,6 +9,7 @@ import { ErrorComponent } from './error/error.component';
 import { DataService } from './data.service';
 import { AccessRoleGuard } from './access-role.guard';
 import { Comments2Component } from './comments2/comments2.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Comments2Component } from './comments2/comments2.component';
     CommentsComponent,
     CommentsListComponent,
     ErrorComponent,
-    Comments2Component
+    Comments2Component,
+    EditComponent
   ],
   imports: [
     BrowserModule,

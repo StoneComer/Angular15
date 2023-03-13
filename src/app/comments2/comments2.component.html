@@ -17,6 +17,8 @@
     </tbody>
   </table>
   <br>
-  <button class="btn btn-primary" [ngClass]="{disabled: dataService.role === 'user'}" >Редактировать</button>
+  <a routerLink="/edit" class="btn btn-primary" >Редактировать</a>
 
   <a routerLink="/" class="btn btn-link">На главную</a>
+
+  <router-outlet></router-outlet>

@@ -6,6 +6,7 @@ import { CommentsListComponent } from './comments-list/comments-list.component';
 import { ErrorComponent } from './error/error.component';
 import { DataService } from './data.service';
 import { AccessRoleGuard } from './access-role.guard';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
           component: Comments2Component
         }
       ]
+  },
+  {
+    canActivate: [AccessRoleGuard],
+    path: 'edit',
+    component: EditComponent,
   },
   {
     path: '',
