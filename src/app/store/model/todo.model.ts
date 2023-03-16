@@ -3,6 +3,6 @@ export interface TODOstring {
 }
 
 export class TODOUpdate{
-    static readonly type = '[TODO]: TODOUpdate';
+    static readonly type = '[TODO]: TODO Update';
     constructor(public payload: TODOstring){}
 }

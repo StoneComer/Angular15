@@ -14,7 +14,7 @@ import {TODOstring, TODOUpdate} from './model/todo.model';
 export class TODOState{
     @Selector()
     static getToken(state: TODOstring){
-        return state.todo;
+        return state;
     }
     @Action(TODOUpdate)
     updateTODOlist(ctx: StateContext<TODOstring>, action: TODOUpdate){
