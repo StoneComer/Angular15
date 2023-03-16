@@ -1,3 +1,15 @@
-<div class="button">
-<button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;">button</button>
-</div>
+<form class="coontainer ma-auto">
+    <input name="todo" [(ngModel)]="text"  type="text" class="input" style="border-color: brown;">
+    </form>
+    <br>
+    <div class="button">
+    <button type="button" class="btn btn-primary" style="background-color: brown; border-color: black;" (click)="updateAuthState()">button</button>
+    </div>
+    <br>
+    <p>TODO List</p>
+    <br>
+    <ng-container>
+        <div *ngFor="let i of currentAuth">
+            {{i | json}}
+        </div>
+    </ng-container>
