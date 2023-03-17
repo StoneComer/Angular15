@@ -1,0 +1,19 @@
+<p style="
+font-family: Inter;
+font-size: 36px;
+font-weight: 800;
+line-height: 40px;
+letter-spacing: -0.025em;
+text-align: center;
+">Основные товары</p>
+
+<div class="container" *ngFor="let main of getdata.mains">
+<div class="card" (click)="open(main.id)">
+      <img src="{{main.image}}" class="card-img-top" alt="..." >
+      <div class="card-body" >
+        <h5 class="card-title">{{main.title}}</h5>
+        <p class="card-text">{{main.price}}$</p>
+      </div>
+</div> 
+</div>
+<router-outlet></router-outlet>
