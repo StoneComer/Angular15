@@ -23,12 +23,16 @@ export class ProfileComponent implements OnInit {
   constructor(public dataservice:DataService, private location:Location, private activateroute: ActivatedRoute){}
   
   id: any;
+  visibility: 'true' | 'false' = 'true';
 
   ngOnInit(){
       this.id = this.dataservice.user.id;
       console.log(this.id);
       this.getInfo();
-      console.log(this.temp)
+      console.log(this.temp);
+      if(this.dataservice.role == 'admin'){
+        this.visibility = 'false';
+      }
   }
 
   temp: pers_info={
