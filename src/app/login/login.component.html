@@ -1,1 +1,80 @@
-<p>login works!</p>
+<div class="card border-0" style="width: 100%; margin: auto; margin-top: 10%; margin-bottom: 10%;">
+    <img src="../assets/Mark.svg" class="card-img-top" alt="..." height = "45px"
+    width= "49px">
+    <div class="card-body" style="margin: auto; text-align: center;">
+      <h5 class="card-title" style="font-family: 'Inter';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 36px;
+      text-align: center;
+      color: #111827;">Вход в личный кабинет</h5>
+      <br>
+      <div class="input-group">
+        <input 
+        required
+        #secondName="ngModel"
+        [(ngModel)]="login" 
+        type="text"
+        class="form-control"
+        placeholder="Username" 
+        aria-label="Логин" 
+        aria-describedby="basic-addon1">
+        <br>
+      </div>
+      <div *ngIf="secondName.invalid && (secondName.dirty || secondName.touched)">
+        <div
+        *ngIf="secondName.hasError('required')"
+        class="alert alert-danger mt-2"
+        role="alert"
+      >
+        Поле должно быть заполнено
+      </div>
+      </div>
+      <div class="input-group">
+        <input type="text" 
+        minlength="5"
+        pattern="[a-zA-Zа-яА-ЯеЁ0-9]*"
+        required
+        #firstName="ngModel"
+        name="name"
+        [(ngModel)]="password"
+        type="text"
+        class="form-control"
+        placeholder="Password" 
+        aria-label="Пароль" 
+        aria-describedby="basic-addon1">
+      </div>
+      <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+        <div
+          *ngIf="firstName.hasError('minlength')"
+          class="alert alert-danger mt-2"
+          role="alert"
+        >
+          Минимальная длинна должна быть больше 5 символов
+        </div>
+        <div
+          *ngIf="firstName.hasError('required')"
+          class="alert alert-danger mt-2"
+          role="alert"
+        >
+          Поле должно быть заполнено
+        </div>
+        <div
+          *ngIf="firstName.hasError('pattern')"
+          class="alert alert-danger mt-2"
+          role="alert"
+        >
+          Поле не должно содержать спец. символов
+        </div>
+      </div>
+      <br>
+      <button class="btn btn-primary" style="margin-top: 5%; width: 400px; border-radius: 6px; background: #4F46E5;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);" (click)="log_in(login,password)">Войти</button>
+      <br>
+      <form>
+        <div class="bg-danger" style="border-radius: 5px; margin-top: 5px;" [ngClass]="{invisible: visibility}">
+            Неверный логин или пароль
+        </div>
+      </form>
+    </div>
+  </div>

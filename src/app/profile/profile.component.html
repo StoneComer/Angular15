@@ -1,1 +1,32 @@
-<p>profile works!</p>
+<p>Личный кабинет</p>
+
+<div class = "osn_info">
+    <img src={{temp.image}}><p>{{temp.firstName}}</p><p>{{temp.lastName}}</p><a class="btn btn-primary">Администрирование</a>
+</div>
+<div>Основная информация</div>
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><small>Возраст</small></h5>
+          <p class="card-text">{{temp.age}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><small>Email</small></h5>
+          <p class="card-text">{{temp.email}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><small>IP</small></h5>
+            <p class="card-text">{{temp.ip}}</p>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -7,11 +7,11 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminProductsEditComponent } from './admin-products-edit/admin-products-edit.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { CatalogComponent } from './catalog/catalog.component';
     ButtonsModule.forRoot(),
     FormsModule
   ],
-  providers: [],
+  providers: [LoginComponent,ProfileComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

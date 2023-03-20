@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { DataService } from '../data.service';
 
 export interface item{
 
@@ -20,7 +23,7 @@ export interface item{
 })
 
 export class ProductPageComponent {
-  constructor(private activateroute: ActivatedRoute, private location: Location){}
+  constructor(private activateroute: ActivatedRoute, private location: Location, private router: Router,private appcomponent: AppComponent, private dataservice: DataService){}
 
   id: any;
 
@@ -37,8 +40,16 @@ export class ProductPageComponent {
     this.activateroute.queryParams.subscribe(data =>{
       this.id = data['id'];
       console.log(this.id);
-      this.getData()
-    })
+      this.getData();
+    });
+    if(this.dataservice.role != 'guest'){
+      this.appcomponent.visibility = true;
+      this.appcomponent.visibility_logged = false;
+    }
+    else{
+      this.appcomponent.visibility = false;
+      this.appcomponent.visibility_logged = true;
+    }
   };
 
   getData = async() =>{
