@@ -8,7 +8,7 @@
     margin-top: 49px;
     ">Каталог товаров</p>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 g-3" style="margin-top: 41px;">
+    <div class="row row-cols-1 row-cols-md-3 g-3" style="margin-left: 1%; margin-top: 1%; margin-right: 1%;">
       <div class="col" *ngFor="let main of getdata.catalog_list">
         <div class="card h-100" (click)="open(main.id)" style="border-radius: 2em; box-shadow: 0 5px 10px rgba(0,0,0,.2);">
           <img src={{main.image}} class="card-img-top" alt="..." height="300px" style="border-radius: 2em 2em 0 0;">
