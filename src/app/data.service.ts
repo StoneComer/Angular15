@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Resolve } from '@angular/router';
 
 export interface productdata{
   id: string;
@@ -33,7 +34,7 @@ export interface userinfo{
   providedIn: 'root'
 })
 export class DataService {
-  constructor() { }
+  constructor(private htpp: HttpClient) { }
 
   catalog: productdata[]=[];
   catalog_list: productdata[]=[];
@@ -107,16 +108,19 @@ export class DataService {
   this.user.image = context.image;
   this.user.token = context.token;
   }
-  getInfo = async() =>{
-    const resp = await fetch('https://dummyjson.com/users/'+ this.user.id);
-    let res = await resp.json();
-    this.temp.id = res.id;
-    this.temp.firstName = res.firstName;
-    this.temp.lastName = res.lastName;
-    this.temp.image = res.image;
-    this.temp.age = res.age;
-    this.temp.ip = res.ip;
-    this.temp.email = res.email;
-  }
+  //getInfo = async() =>{
+    //const resp = await fetch('https://dummyjson.com/users/'+ this.user.id);
+    //let res = await resp.json();
+    //this.temp.id = res.id;
+    //this.temp.firstName = res.firstName;
+    //this.temp.lastName = res.lastName;
+    //this.temp.image = res.image;
+    //this.temp.age = res.age;
+    //this.temp.ip = res.ip;
+    //this.temp.email = res.email;
+  //}
+  resolve = async() => {
+    return await fetch('https://dummyjson.com/users/'+ this.user.id);
+ }
 }
 

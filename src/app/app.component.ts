@@ -24,4 +24,8 @@ export class AppComponent {
       this.visibility_logged = true;
     }
   }
+
+  exit(){
+    this.dataservice.role = 'guest';
+  }
 }

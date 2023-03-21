@@ -1,1 +1,43 @@
-<p>admin-products-edit works!</p>
+<h1 style="font-family: Inter;
+font-size: 24px;
+font-weight: 700;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+margin-left: 0.5%;
+margin-top: 1%;
+">Администрирование - Редактирование товара</h1>
+<br>
+
+<div style="margin-left: 0.5%;
+margin-top: 1%;
+">
+<label class="form-label">Название товара</label>
+<div class="input-group mb-3">
+    <input type="text" name="title" [(ngModel)]="current_item.title" placeholder={{current_item.title}} style="width: 90%;">
+</div>
+
+<label class="form-label">Краткое описание</label>
+<div class="input-group mb-3">
+    <input type="text" name="description" [(ngModel)]="current_item.description" placeholder={{current_item.description}} style="width: 90%;">
+</div>
+
+<label class="form-label">Цена</label>
+<div class="input-group mb-3">
+    <input type="text" name="price" [(ngModel)]="current_item.price" placeholder={{current_item.price}} style="width: 90%;">
+</div>
+
+<label class="form-label">Бренд</label>
+<div class="input-group mb-3">
+    <input type="text" name="brend" [(ngModel)]="current_item.brand" placeholder={{current_item.brand}} style="width: 90%;">
+</div>
+
+<label class="form-label">Рейтинг</label>
+<div class="input-group mb-3">
+    <input type="text" name="rating" [(ngModel)]="current_item.rating" placeholder={{current_item.rating}} style="width: 90%;">
+</div>
+
+<div>
+    <button class="btn btn-primary" (click)="editData()">Сохранить</button><button class="btn btn-primary" (click)="back()" style="margin-left: 10px;">Закрыть</button>
+</div>
+</div>

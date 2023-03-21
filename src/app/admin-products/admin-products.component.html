@@ -1,1 +1,22 @@
-<p>admin-products works!</p>
+<h1 style="font-family: Inter;
+font-size: 24px;
+font-weight: 700;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+margin-left: 0.5%;
+margin-top: 1%;
+">Администрирование - Товары</h1>
+<br>
+<div class="card shadow-sm my-3 mx-4"  >
+    <div class="card-header">
+      Доступные товары
+    </div>
+    <ul class="list-group list-group-flush">
+        <ng-container *ngFor="let prod of dataservice.catalog_list">
+        <li class="list-group-item" (click)="open(prod.id)">
+            {{prod.title}} {{prod.price}} $ 
+            <p style="color: blue;">Редактировать</p> </li>
+    </ng-container>
+    </ul>
+</div>

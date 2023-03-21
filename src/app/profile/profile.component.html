@@ -4,20 +4,31 @@ font-weight: 700;
 line-height: 16px;
 letter-spacing: 0em;
 text-align: left;
-margin-left: 0.5%;">Личный кабинет</p>
+margin-left: 0.5%;
+margin-top: 1%;
+">Личный кабинет</p>
 
 <div class = "card mb-3 border-0" style="margin-left: 0.5%;">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src={{temp.image}} class="img-fluid rounded-start"><p>{{temp.firstName}}</p><p>{{temp.lastName}}</p><a class="btn btn-primary">Администрирование</a>
+            <img src={{temp.image}} class="img-fluid rounded-start" style="border-radius: 4em;">
         </div>
         <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{temp.firstName}}&nbsp;{{temp.lastName}}</h5>
-              <a class="btn btn-primary" routerLink="" [ngClass]="{invisible: visibility}">Администрирование</a>
+            <div class="card-body" style="margin-top: 8%;">
+              <h5 class="card-title" style="
+              font-family: Inter;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 32px;
+              letter-spacing: 0em;
+              ">{{temp.firstName}}&nbsp;{{temp.lastName}}</h5>
+              <div [ngClass]="{invisible: visibility}">
+              <a class="btn btn-primary" routerLink="/admin">Администрирование</a>
+            </div>
             </div>
     </div>
 </div>
+<br>
 <div style="margin-left: 0.5%;">Основная информация</div>
 <div class="row" style="margin-left: 0.5%;">
     <div class="col-sm-6">

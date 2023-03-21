@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-admin-products',
@@ -6,5 +11,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent {
+  constructor(public dataservice: DataService, private router: Router, public appcomponent: AppComponent){}
 
+  ngOnInit():void {
+this.dataservice.getData();
+}
+open(id: string){
+  this.router.navigate(['/admin-products/',id], {
+    queryParams: {
+      id: id
+    },
+  });
+}
 }

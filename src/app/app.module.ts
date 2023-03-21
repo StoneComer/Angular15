@@ -12,6 +12,8 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
 import { AdminProductsEditComponent } from './admin-products-edit/admin-products-edit.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +25,17 @@ import { ProfileComponent } from './profile/profile.component';
     AdminComponent,
     AdminProductsComponent,
     AdminProductsEditComponent,
-    CatalogComponent
+    CatalogComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ButtonsModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [LoginComponent,ProfileComponent],
+  providers: [LoginComponent,ProfileComponent,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

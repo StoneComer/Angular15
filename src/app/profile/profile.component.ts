@@ -23,16 +23,30 @@ export class ProfileComponent implements OnInit {
   constructor(public dataservice:DataService, private location:Location, private activateroute: ActivatedRoute){}
   
   id: any;
-  visibility: 'true' | 'false' = 'true';
+  visibility: boolean = true;
 
   ngOnInit(){
-      this.id = this.dataservice.user.id;
-      console.log(this.id);
-      this.getInfo();
-      console.log(this.temp);
+      //this.id = this.dataservice.user.id;
+      //console.log(this.id);
+      //this.getInfo();
+      //console.log(this.temp);
+      this.activateroute.data.subscribe(async (response: any) =>{
+        let list = await response.res;
+        let res =  await list.json();
+        this.temp.id = res.id;
+        this.temp.firstName = res.firstName;
+        this.temp.lastName = res.lastName;
+        this.temp.image = res.image;
+        this.temp.age = res.age;
+        this.temp.ip = res.ip;
+        this.temp.email = res.email;
+      });
+      console.log(this.dataservice.role);
       if(this.dataservice.role == 'admin'){
-        this.visibility = 'false';
+        this.visibility = false;
       }
+      console.log(this.visibility);
+      console.log(this.temp)
   }
 
   temp: pers_info={
@@ -45,15 +59,15 @@ export class ProfileComponent implements OnInit {
     email: ''
     };
 
-  getInfo = async() =>{
-    const resp = await fetch('https://dummyjson.com/users/'+ this.id);
-    let res = await resp.json();
-    this.temp.id = res.id;
-    this.temp.firstName = res.firstName;
-    this.temp.lastName = res.lastName;
-    this.temp.image = res.image;
-    this.temp.age = res.age;
-    this.temp.ip = res.ip;
-    this.temp.email = res.email;
-  }
+  //getInfo = async() =>{
+    //const resp = await fetch('https://dummyjson.com/users/'+ this.id);
+    //let res = await resp.json();
+    //this.temp.id = res.id;
+    //this.temp.firstName = res.firstName;
+    //this.temp.lastName = res.lastName;
+    //this.temp.image = res.image;
+    //this.temp.age = res.age;
+    //this.temp.ip = res.ip;
+    //this.temp.email = res.email;
+  //}
 }
