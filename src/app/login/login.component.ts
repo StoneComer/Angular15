@@ -23,15 +23,20 @@ export class LoginComponent {
     password: '9uQFF1Lh'
   };
 
+  ngoninit(){
+    console.log(localStorage.getItem('id'));
+  }
+
   login: string = '';
   password: string = '';
+  delay = async (ms: number) => await new Promise(resolve => setTimeout(resolve, ms));
 
   log_in(login:string, password: string){
     if (this.login == this.user_list.login || this.password == this.user_list.password){
       this.visibility = true;
       this.dataservice.log(login, password);
       this.dataservice.role = 'user';
-      this.router.navigate(['/profile']);
+      this.delay(1000).then(()=> this.router.navigate(['/profile']));
       this.appcomponent.visibility_logged = false;
       this.appcomponent.visibility = true;
     }
@@ -39,7 +44,7 @@ export class LoginComponent {
       this.visibility = true;
       this.dataservice.log(login, password);
       this.dataservice.role = 'admin';
-      this.router.navigate(['/profile']);
+      this.delay(1000).then(()=> this.router.navigate(['/profile']));
       this.appcomponent.visibility_logged = false;
       this.appcomponent.visibility = true;
       }

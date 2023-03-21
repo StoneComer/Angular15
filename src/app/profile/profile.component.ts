@@ -60,7 +60,7 @@ export class ProfileComponent implements OnInit {
     };
 
   //getInfo = async() =>{
-    //const resp = await fetch('https://dummyjson.com/users/'+ this.id);
+    //const resp = await fetch('https://dummyjson.com/users/'+ localStorage.getItem('id'));
     //let res = await resp.json();
     //this.temp.id = res.id;
     //this.temp.firstName = res.firstName;

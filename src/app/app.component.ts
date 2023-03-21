@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { DataService } from './data.service';
 export class AppComponent {
   title = 'Angular15';
 
-  constructor(public dataservice:DataService) {}
+  constructor(public dataservice:DataService, private router: Router) {}
 
   visibility: boolean = false;
   visibility_logged: boolean = true;
@@ -27,5 +28,6 @@ export class AppComponent {
 
   exit(){
     this.dataservice.role = 'guest';
+    location.reload();
   }
 }

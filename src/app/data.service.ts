@@ -88,7 +88,8 @@ export class DataService {
   }
 
   log = async (login : string, password : string) =>{
-    const response = fetch('https://dummyjson.com/auth/login', {
+    localStorage.removeItem('id');
+    const response = await fetch('https://dummyjson.com/auth/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -99,6 +100,7 @@ export class DataService {
     })
   })
   let context = await (await response).json();
+  localStorage.setItem('id',context.id);
   this.user.id = context.id;
   this.user.username = context.username;
   this.user.email = context.email;
@@ -108,6 +110,7 @@ export class DataService {
   this.user.image = context.image;
   this.user.token = context.token;
   }
+
   //getInfo = async() =>{
     //const resp = await fetch('https://dummyjson.com/users/'+ this.user.id);
     //let res = await resp.json();
@@ -120,7 +123,7 @@ export class DataService {
     //this.temp.email = res.email;
   //}
   resolve = async() => {
-    return await fetch('https://dummyjson.com/users/'+ this.user.id);
- }
+    return await fetch('https://dummyjson.com/users/'+ localStorage.getItem('id'));
+  }
 }
 
