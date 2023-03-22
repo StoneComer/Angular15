@@ -33,7 +33,7 @@ const routes: Routes = [{
   component: ProductPageComponent
 },
 {
-  path:'login',
+  path:'auth',
   title: 'Вход',
   component: LoginComponent
 },
@@ -54,13 +54,13 @@ const routes: Routes = [{
 },
 {
   canActivate:[AccessAdminGuard],
-  path: 'admin-products',
+  path: 'admin/items',
   title: 'Администрирование-товары',
   component: AdminProductsComponent
 },
 {
   canActivate:[AccessAdminGuard],
-  path: 'admin-products/:id',
+  path: 'admin/items/:id',
   title: 'Администрирование - Редактирование товара',
   component: AdminProductsEditComponent
 },

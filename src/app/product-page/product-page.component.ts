@@ -50,6 +50,12 @@ export class ProductPageComponent {
       this.appcomponent.visibility = false;
       this.appcomponent.visibility_logged = true;
     }
+    if(this.dataservice.role == 'admin'){
+      this.appcomponent.visibility_admin = false;
+    }
+    else{
+      this.appcomponent.visibility_admin = true;
+    }
   };
 
   getData = async() =>{

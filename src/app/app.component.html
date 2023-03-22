@@ -22,6 +22,20 @@
       <li class="nav-item">
         <a routerLink="/catalog" class="nav-link">Каталог товраов</a>
       </li>
+      <div [ngClass]="{invisible: visibility_admin}">
+      <li class="nav-item">
+        <a routerLink="/admin" class="nav-link btn btn-primary btn-sm" style="
+        color: white;
+        background: #4F46E5;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+        margin-right: 9%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ">Администрирование</a>
+      </li>
+      </div>
     </ul>
     <form class="d-flex">
       <div [ngClass]="{invisible: visibility}">
@@ -31,9 +45,9 @@
       background: #4F46E5;
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
       border-radius: 4px;
-      " routerLink="/login">Войти</a>
+      " routerLink="/auth">Войти</a>
       </div>
-      <div [ngClass]="{invisible: visibility_logged}" s>
+      <div [ngClass]="{invisible: visibility_logged}">
         <a routerLink="/profile" style="color:black; margin-right: 3%;">
           {{dataservice.user.username}}
           <br>

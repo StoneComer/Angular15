@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Location } from '@angular/common';
@@ -20,7 +21,7 @@ export interface pers_info{
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(public dataservice:DataService, private location:Location, private activateroute: ActivatedRoute){}
+  constructor(public dataservice:DataService, private location:Location, private activateroute: ActivatedRoute, private appcomponent: AppComponent){}
   
   id: any;
   visibility: boolean = true;
@@ -43,7 +44,11 @@ export class ProfileComponent implements OnInit {
       });
       console.log(this.dataservice.role);
       if(this.dataservice.role == 'admin'){
+        this.appcomponent.visibility_admin = false;
         this.visibility = false;
+      }
+      else{
+        this.appcomponent.visibility_admin = true;
       }
       console.log(this.visibility);
       console.log(this.temp)

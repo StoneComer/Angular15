@@ -32,21 +32,23 @@ export class LoginComponent {
   delay = async (ms: number) => await new Promise(resolve => setTimeout(resolve, ms));
 
   log_in(login:string, password: string){
-    if (this.login == this.user_list.login || this.password == this.user_list.password){
+    if (this.login == this.user_list.login && this.password == this.user_list.password){
       this.visibility = true;
       this.dataservice.log(login, password);
       this.dataservice.role = 'user';
       this.delay(1000).then(()=> this.router.navigate(['/profile']));
       this.appcomponent.visibility_logged = false;
       this.appcomponent.visibility = true;
+      this.appcomponent.visibility_admin = true;
     }
-    else if (this.login == this.admin_list.login || this.password == this.admin_list.password){
+    else if (this.login == this.admin_list.login && this.password == this.admin_list.password){
       this.visibility = true;
       this.dataservice.log(login, password);
       this.dataservice.role = 'admin';
       this.delay(1000).then(()=> this.router.navigate(['/profile']));
       this.appcomponent.visibility_logged = false;
       this.appcomponent.visibility = true;
+      this.appcomponent.visibility_admin = false;
       }
       
     else {

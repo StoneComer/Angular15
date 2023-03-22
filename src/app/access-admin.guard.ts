@@ -16,7 +16,7 @@ export class AccessAdminGuard implements CanActivate {
       return true;
     }
     else{
-      return this.router.navigateByUrl('/login');
+      return this.router.navigateByUrl('/auth');
     }
   }
   

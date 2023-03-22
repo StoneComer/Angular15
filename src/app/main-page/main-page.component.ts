@@ -22,6 +22,12 @@ export class MainPageComponent {
     this.appcomponent.visibility = false;
     this.appcomponent.visibility_logged = true;
   }
+  if(this.getdata.role == 'admin'){
+    this.appcomponent.visibility_admin = false;
+  }
+  else{
+    this.appcomponent.visibility_admin = true;
+  }
   }
 
   open(id:string){

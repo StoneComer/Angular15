@@ -17,7 +17,7 @@ export class AdminProductsComponent {
 this.dataservice.getData();
 }
 open(id: string){
-  this.router.navigate(['/admin-products/',id], {
+  this.router.navigate(['/admin/items/',id], {
     queryParams: {
       id: id
     },
